@@ -65,9 +65,13 @@ document.getElementById('add-Money-btn').addEventListener('click', function(e){
 //Add Money transactions
     const data = {
         name : 'Add Money',
-        date : new Date().toLocaleDateString()
+        date : new Date().toLocaleString('en-US', { 
+        dateStyle: 'short', 
+        timeStyle: 'medium' 
+    }),
+        icon : 'images/wallet1.png'
     }
-    transactionsData.push(data);
+    transactionsData.unshift(data);
 })
 
 // Cash Out feature
@@ -96,9 +100,13 @@ document.getElementById('Withdraw-btn').addEventListener('click',function(e){
 //Cash Out transactions
     const data = {
         name : 'Cash Out',
-        date : new Date().toLocaleDateString()
+        date : new Date().toLocaleString('en-US', { 
+        dateStyle: 'short', 
+        timeStyle: 'medium' 
+    }),
+        icon : 'images/send1.png'
     }
-    transactionsData.push(data);
+    transactionsData.unshift(data);
 })
 
 // Transfer Money feature
@@ -127,9 +135,13 @@ document.getElementById('Transfer-btn').addEventListener('click',function(e){
 //Transfer Money transactions
     const data = {
         name : 'Transfer Money',
-        date : new Date().toLocaleDateString()
+        date : new Date().toLocaleString('en-US', { 
+        dateStyle: 'short', 
+        timeStyle: 'medium' 
+    }),
+        icon : 'images/money1.png'
     }
-    transactionsData.push(data);
+    transactionsData.unshift(data);
 })
 
 // Pay Bill feature
@@ -158,9 +170,13 @@ document.getElementById('Pay-Bill-btn').addEventListener('click',function(e){
 //Transfer Money transactions
     const data = {
         name : 'Pay Bill',
-        date : new Date().toLocaleDateString()
+        date : new Date().toLocaleString('en-US', { 
+        dateStyle: 'short', 
+        timeStyle: 'medium' 
+    }),
+        icon : 'images/purse1.png'
     }
-    transactionsData.push(data);
+    transactionsData.unshift(data);
 })
 
 // Transaction History
@@ -174,7 +190,7 @@ document.getElementById('Transactions-History-btn').addEventListener('click', fu
         div.innerHTML = `
             <div class="flex justify-between items-center bg-white p-4 mb-3 rounded-2xl">
                 <div class="Transaction-left flex items-center gap-3">
-                    <div class="bg-[#f4f5f7] rounded-full p-[0.8rem] "><img class="mx-auto" src="images/wallet1.png" alt=""></div>
+                    <div class="bg-[#f4f5f7] rounded-full p-[0.8rem] "><img class="mx-auto" src="${data.icon}" alt=""></div>
                     <div>
                         <h3 class="text-[#080808b3]">${data.name}</h3>
                         <p class="text-[0.8rem] text-[#080808b3]">${data.date}</p>
